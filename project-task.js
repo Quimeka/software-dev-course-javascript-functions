@@ -72,3 +72,70 @@ for (let i = 0; i < names.length; i++) {
 */
 
 // ✅ Your refactored code goes below this line!
+
+
+/*Script 1 - Printing a welcome to the user is repetitive.
+
+console.log("Welcome, Alice!");
+console.log("Welcome, Bob!");
+console.log("Welcome, Charlie!"); */
+
+function greetPerson(name) {
+    console.log(`Welcome, ${name}!`);
+}
+
+let nameList = ["Alice", "Bob", "Charlie"];
+for (const name of nameList) {
+    greetPerson(name);
+}
+
+/*// Script 2 - It's not repetitive, however, if summations will be used later, it can be cleaned up to eliminate the repetitive code. Also to ensure each function has one job, the sum and print are separated.
+let num1 = 5, num2 = 10;
+let sum = num1 + num2;
+console.log("The sum of 5 and 10 is " + sum);*/
+
+function calculateReturnSum(num1, num2) {
+    return num1 + num2;
+}
+
+function printSum(num1, num2,result){
+   console.log(`The sum of ${num1} and ${num2} is ${result}`);
+}
+
+let number1 = 5, number2 = 10;
+let sumNums = calculateReturnSum(number1, number2);
+printSum(number1,number2,sumNums);
+
+/* Script 3 - Product calculation. It's not repetitive, however, if product of values will be used later, it can be cleaned up to eliminate the repetitive code.
+let product = num1 * num2;
+console.log("The product of 5 and 10 is " + product); */
+
+function calculateReturnProduct(num1, num2) {
+    return num1 * num2;
+}
+
+function printProduct(num1, num2,result){
+   console.log(`The product of ${num1} and ${num2} is ${result}`);
+}
+//created new number variables although the values used in script 2 are the same
+let number3 = 5, number4 = 10;
+let productNums = calculateReturnProduct(number3, number4);
+printProduct(number3,number4,productNums);
+
+/* Script 4 - Print names from a list : Not repetitive, but can be cleaned up for similar reasons as the others.
+let names = ["Alice", "Bob", "Charlie"];
+console.log("Names in the list:");
+for (let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+}*/
+
+function printNames(names){
+   console.log(`Names in the list:`);
+
+   for (const name of names) {
+        console.log(name);
+    }
+}
+//saving as new variable since similar list/variable exist for Script 1
+let nameList2 = ["Alice", "Bob", "Charlie"];
+printNames(nameList2);
